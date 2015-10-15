@@ -1,0 +1,31 @@
+{
+    "name": "alexweissman/UserFrosting",
+    "type": "project",
+    "description": "A secure, modern user management system based on UserCake, jQuery, and Bootstrap.",
+    "keywords": ["php user management", "usercake"],
+    "homepage": "https://github.com/alexweissman/UserFrosting",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name": "Alexander Weissman",
+            "homepage": "http://alexanderweissman.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "twig/twig": "~1.0",
+        "slim/slim": "2.*",
+        "slim/views": "*",
+        "nikic/php-parser": "*",
+        "alexweissman/fortress" : "dev-master",
+        "phpmailer/phpmailer": "5.2.10",
+        "slim/pdo": "^1.8",
+        "components/font-awesome": "^4.4",
+        "driftyco/ionicons": "^2.0"
+    },
+    "autoload": {
+        "classmap" : [
+            "auth", "controllers", "models", "plugins"
+        ]
+    }
+}

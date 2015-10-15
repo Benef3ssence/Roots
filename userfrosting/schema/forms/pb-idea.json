@@ -1,0 +1,106 @@
+{
+            "district" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 10,
+                "message" : "Please enter your District #"
+            },
+            "required" : {
+                "message" : "Please enter your District #"
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+                "fnm" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 75,
+                "message" : "Is your First Name really over 200 characters in length?"
+            },
+            "required" : {
+                "message" : "Please enter your First Name."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+
+
+"lnm" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 75,
+                "message" : "Is your Last Name really over 200 characters in length?"
+            },
+            "required" : {
+                "message" : "Please enter your Last Name."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+
+
+"addr" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 255,
+                "message" : "Is your Street Address really over 255 characters in length?"
+            },
+            "required" : {
+                "message" : "Please enter your Street Address."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+
+
+
+"cty" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 255,
+                "message" : "Your City isn't really over 100 characters in length, is it?"
+            },
+            "required" : {
+                "message" : "Please enter your City."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+
+
+"zip" : {
+                 "validators" : {
+            "length" : {
+                "min" : 1,
+                "max" : 255,
+                "message" : "Your Zip isn't really over 30 characters in length, is it?"
+            },
+            "required" : {
+                "message" : "Please enter your City."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+"taidea" : {
+                 "validators" : {
+        
+            "required" : {
+                "message" : "Please enter your Idea."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    },
+"taloc" : {
+                 "validators" : {
+        
+            "required" : {
+                "message" : "Please enter your Idea's specific where abouts."
+            }
+        },
+        "sanitizers" : { "raw" : {}}
+    }}

@@ -1,0 +1,170 @@
+{% set page_group = "bud" %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'components/head.html' %} 
+  
+<body>
+    <div id="wrapper">
+        {% include 'components/nav-account.html' %}
+        <div id="page-wrapper">
+            {% include 'components/alerts.html' %}
+
+ 
+         
+            <!-- /.row -->
+                 
+
+            <div class="container-fluid">   
+      {% block content %} {% include 'components/b.html' %} {% endblock %}
+                
+                
+            </div>
+            <!-- /.row -->
+              
+            {% include 'components/footer.html' %}    
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+                                    
+ 
+                                    <style>
+ 
+.gallery-control {
+    background-color: #fff;
+    box-shadow: 0 1px 3px -1px rgba(22, 24, 27, 0.26);
+    margin-bottom: 20px;
+    padding: 6px 12px;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.btn-toolbar::after, .btn-toolbar::before {
+    content: " ";
+    display: table;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+.btn-toolbar::after {
+    clear: both;
+}
+.btn-toolbar::after, .btn-toolbar::before {
+    content: " ";
+    display: table;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+.btn-toolbar {
+    margin-left: -5px;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+ 
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0;
+}
+.btn-nofill.btn-default.active, .btn-nofill.btn-default.focus, .btn-nofill.btn-default:active, .btn-nofill.btn-default:focus, .btn-nofill.btn-default:hover, .open > .btn-nofill.btn-default.dropdown-toggle {
+    background-color: #e6e9ed;
+    color: rgba(22, 24, 27, 0.87);
+}
+.btn-nofill.btn-default {
+    color: rgba(22, 24, 27, 0.87);
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+    outline: 1px solid #fff;
+}
+.btn-toolbar .btn, .btn-toolbar .btn-group, .btn-toolbar .input-group {
+    float: left;
+}
+.btn-group-vertical > .btn, .btn-group > .btn {
+    float: left;
+    position: relative;
+}
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .btn-default.dropdown-toggle {
+    background-color: #c8cfd8;
+    border-color: transparent;
+    color: rgba(22, 24, 27, 0.87);
+}
+.btn.focus, .btn:focus, .btn:hover {
+    color: rgba(22, 24, 27, 0.87);
+    text-decoration: none;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+    outline-offset: -2px;
+}
+.btn-nofill {
+    background-color: transparent;
+}
+.btn {
+    font-weight: 500;
+    line-height: 20px;
+}
+.btn-default {
+    background-color: #e6e9ed;
+    border-color: transparent;
+    color: rgba(22, 24, 27, 0.87);
+}
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+</style>
+<script src="https://cdn.jsdelivr.net/jquery.nouislider/8.0.2/nouislider.min.js"></script>
+</body>  
+</html>

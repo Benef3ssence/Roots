@@ -1,0 +1,208 @@
+ 
+<link href="https://cdn.jsdelivr.net/jquery.nouislider/8.0.2/nouislider.min.css" rel="stylesheet" />
+                                    
+<script src="https://cdn.jsdelivr.net/jquery.nouislider/8.0.2/nouislider.min.js"></script>
+ <div class="clearfix  container-fluid" style="font-size: small;">   
+
+            <div class="row" >
+                
+                   
+            <div class="btn-toolbar col-lg-12"><div class="col-lg-4"><h1 style="margin:0;    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">Oversight</h1>    </div>
+              <div class="gallery-control" style="box-shadow: 0 1px 3px -1px rgb(119, 119, 119);">
+            <div class="btn-toolbar">
+              <div class="btn-group mr-2x">
+               
+           
+              <div class="btn-group pull-right mr-3x"><button aria-label="sort new"   class="btn btn-nofill btn-default"	style=" width:50px;-webkit-box-shadow: inset 0 1px 1px gray; box-shadow: inset 0 1px 1px gray; border:1px solid black; margin: 2px 4px; " type="button" data-sort="default" data-toggle="gallery-sort"><i class="ion-calendar fa-2x fa-fw"></i></button>
+
+<button aria-label="sort vote"   class="btn btn-nofill btn-default" style="width:50px; -webkit-box-shadow: inset 0 1px 1px gray; box-shadow: inset 0 1px 1px gray; border:1px solid black; margin: 2px 4px; " type="button" data-sort="default" data-toggle="gallery-sort"><i class="ion-ios-bell-outline fa-2x fa-fw"></i></button>
+<button aria-label="sort hot"   class="btn btn-nofill btn-default"	 style="width:50px; -webkit-box-shadow: inset 0 1px 1px gray;  box-shadow: inset 0 1px 1px gray; border:1px solid black; margin:2px 4px; " type="button" data-sort="default" data-toggle="gallery-sort"><i class="ion-bonfire fa-2x fa-fw"></i></button>
+
+<button aria-label="sort ended" class="btn btn-nofill btn-default" 	style="width:50px;-webkit-box-shadow: inset 0 1px 1px gray; box-shadow: inset 0 1px 1px gray; border:1px solid black; margin: 2px 4px; " type="button" data-sort="default" data-toggle="gallery-sort"><i class="ion-checkmark fa-2x fa-fw"></i></button>
+<button aria-label="sort ended" class="btn btn-nofill btn-default" 	style="width:50px;-webkit-box-shadow: inset 0 1px 1px gray; box-shadow: inset 0 1px 1px gray; border:1px solid black; margin: 2px 4px; " type="button" data-sort="default" data-toggle="gallery-sort"><i class="ion-checkmark fa-2x fa-fw"></i></button><button aria-label="sort fav"   class="btn btn-nofill btn-default"	style="width:50px;-webkit-box-shadow: inset 0 1px 1px gray; box-shadow: inset 0 1px 1px gray; border:1px solid black; margin: 2px 4px; " type="button" data-sort="mysort:asc" data-toggle="gallery-sort"><i class="ion-bookmark fa-2x fa-fw"></i></button>
+              </div><!-- /.btn-group -->
+            </div><!-- /.btn-toolbar -->
+          </div>
+          </div>  </div>
+
+
+  <style type="text/css">
+.gpan{min-height:280px;  overflow:hidden;}
+.ttl{background-color:#f9f9f9; color:black;text-align:center;  min-height:95px; max-height:95px;}
+.pbx{min-height:300px; }
+.preft{position:absolute; bottom:60px;}
+.foot{position:absolute; left:0; bottom:22px; }
+
+
+
+.flippant {
+  transform: perspective(500px) rotateY(0deg);
+  -webkit-transform: perspective(500px) rotateY(0deg);
+  -moz-transform: perspective(500px) rotateY(0deg);
+  /*z-index: 200;*/
+}
+
+.flippant-back {
+  transform: perspective(500px) rotateY(-180deg);
+  -moz-transform: perspective(500px) rotateY(-180deg);
+  -webkit-transform: perspective(500px) rotateY(-180deg);
+  height: 0;
+  /*z-index: 200;*/
+}
+
+.flippant, .flippant-back {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.flippant, .flipper {
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.flippant.flipped {
+  transform: perspective(500px) rotateY(180deg);
+  -moz-transform: perspective(500px) rotateY(180deg);
+  -webkit-transform: perspective(500px) rotateY(180deg);
+
+}
+
+.flippant-back.flipped  {
+  transform: perspective(500px) rotateY(0deg);
+  -moz-transform: perspective(500px) rotateY(0deg);
+  -webkit-transform: perspective(500px) rotateY(0deg);
+}
+
+.flippant-modal-dark, .flippant-modal-light {
+  position: fixed;
+  margin: 0;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  padding: 1em;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.7);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.flippant-modal-dark, .flippant-modal-dark p { color: white;}
+
+.flippant-modal-light {
+  background: rgba(230,230,230,0.7);
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+  </style>
+
+	
+ 
+{% for osi in osi %} 
+
+ 
+
+
+<div  class="clearfix pbx col-sm-12 col-md-12 col-lg-4 card "  style="min-height:300px; z-index:12;   ">   
+<div class="panel panel-green"  >
+<div  style="min-height:285px;  overflow:hidden; z-index:12; card"class="panel-heading">
+<div class="row" style="min-height:100px;max-height:100px;   z-index:12; ">
+<div class="col-xs-12">
+
+<i class="fa fa-tasks fa-2x" style="z-index:12; "> {{osi.comm |length > 40 ? osi.comm|slice(0, 40) ~ '...' : osi.comm}}</i>
+</div>
+<div class="col-xs-12 text-right" style=""> 
+<div class="h4"><b>{{osi.fid}}</b></div>
+<div>  </div>
+<div class="ttl"> 
+ 
+ {{osi.title |length > 180 ? osi.title|slice(0, 180) ~ '...' : osi.title}}</div>
+
+</div>
+ 
+
+</div>
+
+<div class="preft pull-left col-xs-12 text-left m" >
+<b>Votes:{{osi.id}}</b> </div> 
+<div class="preft  pull-right col-xs-10 col-sm-11 col-lg-10 text-right m" >
+ 
+<small>{{osi.prime}}</small>
+<small>Applied</small>
+<small>Added: {{osi.ts}}</small></div><a href="#" class="foot container-fluid col-xs-12 col-md-12 col-lg-12 m" style="">
+<div class="panel-footer card" > 
+<span class="pull-left">View Details</span>
+<span class="pull-right" ><i class="fa fa-arrow-circle-right"></i></span>
+<div class="clearfix"></div>
+</div>
+</a>
+</div>
+</div></div> 
+
+
+  
+ 
+ {% endfor %} <div class="row col-lg-12" >   
+    
+                
+                
+            </div>
+</div>
+<script type="text/javascript">
+ 
+
+!function(e){if("function"==typeof bootstrap)bootstrap("flippant",e);else if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else if("undefined"!=typeof ses){if(!ses.ok())return;ses.makeFlippant=e}else"undefined"!=typeof window?window.flippant=e():global.flippant=e()}(function(){var define,ses,bootstrap,module,exports;return function(e,t,n){function i(n,s){if(!t[n]){if(!e[n]){var o=typeof require=="function"&&require;if(!s&&o)return o(n,!0);if(r)return r(n,!0);throw new Error("Cannot find module '"+n+"'")}var u=t[n]={exports:{}};e[n][0].call(u.exports,function(t){var r=e[n][1][t];return i(r?r:t)},u,u.exports)}return t[n].exports}var r=typeof require=="function"&&require;for(var s=0;s<n.length;s++)i(n[s]);return i}({1:[function(require,module,exports){exports.flip=flip;function flip(flipper,content,type,class_name,timeout){var position,back,style_func;timeout=timeout||400;type=type||"card";if(type==="modal"){class_name=class_name||"flippant-modal-dark";position="fixed";style_func=null_styles}if(type==="card"){class_name=class_name||"flippant-modal-light";position="absolute";style_func=card_styles}back=document.createElement("div");document.body.appendChild(back);set_styles(back,flipper,position);back.innerHTML=content;flipper.classList.add("flippant");back.classList.add("flippant-back");back.classList.add(class_name);if(position=="absolute"){style_func(back)}else{window.setTimeout(function(){style_func(back)},0)}window.setTimeout(function(){back.classList.add("flipper");back.classList.add("flipped");flipper.classList.add("flipped")},0);back.addEventListener("close",close);back.close=close;function close(){set_styles(back,flipper,position);back.classList.remove("flipped");back.classList.remove("flipped");flipper.classList.remove("flipped");window.setTimeout(function(){back.classList.remove(class_name);document.body.removeChild(back)},timeout)}return back}function set_styles(back,front,position){back.style.position=position;back.style.top=front.offsetTop+"px";back.style.left=front.offsetLeft+"px";back.style["min-height"]=front.offsetHeight+"px";back.style.width=front.offsetWidth+"px";back.style["z-index"]=9999}function null_styles(back){back.style.top=null;back.style.left=null;back.style.height=null;back.style.width=null}function card_styles(back){back.style.height="auto"}},{}]},{},[1])(1)});
+ 
+(function(e, t, n) {
+  function i(n, s) {
+    if (!t[n]) {
+      if (!e[n]) {
+        var o = typeof require == "function" && require;
+        if (!s && o) return o(n, !0);
+        if (r) return r(n, !0);
+        throw new Error("Cannot find module '" + n + "'")
+      }
+      var u = t[n] = {
+        exports: {}
+      };
+      e[n][0].call(u.exports, function(t) {
+        var r = e[n][1][t];
+        return i(r ? r : t)
+      }, u, u.exports)
+    }
+    return t[n].exports
+  }
+  var r = typeof require == "function" && require;
+  for (var s = 0; s < n.length; s++) i(n[s]);
+  return i
+})({
+  1: [function(require, module, exports) {
+    // index.js
+
+    var flip = flippant.flip
+    var event = require('./event')
+
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('panel-footer')) {
+        e.preventDefault()
+        var flipper = e.target.parentNode.parentNode
+        var back
+        var div = " "
+
+        if (e.target.classList.contains('card')) {
+          back = flip(flipper, div )
+        } else {back = flip(flipper,  div, 'modal')}
+        back.addEventListener('click', function(e) {if (e.target.classList.contains('btn')) {event.trigger(back, 'close')}})
+      }})
+  }, {"./event": 2 }], 2: [function(require, module, exports) {exports.trigger = function(elm, event_name, data) {var evt = new CustomEvent(event_name, data)elm.dispatchEvent(evt)}
+  }, {}]
+}, {}, [1]);
+</script >

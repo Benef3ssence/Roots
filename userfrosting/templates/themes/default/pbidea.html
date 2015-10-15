@@ -1,0 +1,201 @@
+
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        {% include 'components/head.html' %} 
+        <body>
+          <div id="wrapper">
+            {% include 'components/nav-account.html' %}
+            <div id="page-wrapper">
+              {% include 'components/alerts.html' %}
+              <div class="row">
+                <div class="col-lg-12"><div class="col-lg-11">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-users"></i> Participatory Budget Idea</h3>
+                    </div>
+                    <!--<div class="panel-body"><legend>Participatory Budget Idea</legend>-->
+                      <form style="margin:10px;"class="form-horizontal" role="form" name="pbidea"  id="pbidea" action="{{site.uri.public}}/Participatory/idea" method="post">
+                        {% include 'common/components/csrf.html' %}
+                        
+                      
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="district">District #</label>  
+  <div class="col-md-6">
+  <input id="district" name="district" type="text" placeholder="District # (Required)" class="form-control input-md" required>
+    
+  </div>
+</div><!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="fnm">First Name</label>  
+  <div class="col-md-6">
+  <input id="fnm" name="fnm" type="text" placeholder="First Name (Required)" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="lnm">Last Name</label>  
+  <div class="col-md-6">
+  <input id="lnm" name="lnm" type="text" placeholder="Last Name (Required)" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="addr">Street Address </label>  
+  <div class="col-md-6">
+  <input id="addr" name="addr" type="text" placeholder="Street Address (Required)" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="apt">Apt. #</label>  
+  <div class="col-md-6">
+  <input id="apt" name="apt" type="text" placeholder="Apt. #" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="cty">City</label>  
+  <div class="col-md-6">
+  <input id="cty" name="cty" type="text" placeholder="City (Required)" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="zip">Zip code</label>  
+  <div class="col-md-6">
+  <input id="zip" name="zip" type="text" placeholder="Zip code (Required)" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="taidea">What is your idea for what should be built or repaired in our neighborhood? (Required)</label>
+  <div class="col-md-6">                     
+    <textarea class="form-control" id="taidea" name="taidea"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="taloc">Where should it be located? Please be specific as to neighborhood or intersection. (Required)</label>
+  <div class="col-md-6">                     
+    <textarea class="form-control" id="taloc" name="taloc"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="tawhy">Why is it needed (or what need does it fulfill)?</label>
+  <div class="col-md-6">                     
+    <textarea class="form-control" id="tawhy" name="tawhy"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="taadd">Any further comments or questions?</label>
+  <div class="col-md-6">                     
+    <textarea class="form-control" id="taadd" name="taadd"></textarea>
+  </div>
+</div>
+
+</fieldset>
+ 
+
+                        <div class="form-group text-center">
+                          <button type="submit" class="btn btn-success text-center">Submit Idea</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div> </div></div>
+              {% include 'common/components/footer.html' %}    
+    <script>
+        $(document).ready(function() {           
+         // Process form 
+          $("form[name='pbidea']").formValidation({
+            framework: 'bootstrap',
+            // Feedback icons
+            icon: {
+                valid: 'fa fa-check',
+                invalid: 'fa fa-times',
+                validating: 'fa fa-refresh'
+            },
+            fields: {{ validators | raw }}
+          }).on('success.form.fv', function(e) {
+            // Prevent double form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var form = $(e.target);
+
+            // Serialize and post to the backend script in ajax mode
+            var serializedData = form.serialize();
+            var url = form.attr('action');
+            $.ajax({  
+              type: "POST",  
+              url: url,  
+              data: serializedData       
+            }).done(function(data, statusText, jqXHR) {
+                // Forward to login page on success
+                window.location.replace(site.uri.public + "/account/login");
+            }).fail(function(jqXHR) {
+                if (site['debug'] == true) {
+                    document.body.innerHTML = jqXHR.responseText;
+                } else {
+                    console.log("Error (" + jqXHR.status + "): " + jqXHR.responseText );
+                    // Display errors on failure
+                    $('#userfrosting-alerts').flashAlerts().done(function() {
+                        // Re-enable submit button
+                        form.data('formValidation').disableSubmitButtons(false);
+                        // Reload captcha
+                        $("#captcha").captcha();
+                    });
+                }
+            });
+          });
+        });
+        
+        // This plugin reloads the captcha in the specified field
+        (function( $ ) {
+            $.fn.captcha = function() {
+                var field = $(this);
+                console.log("Reloading captcha");
+                
+                var img_src = site.uri.public + "/account/captcha?" + new Date().getTime();
+                
+                return $.ajax({  
+                  type: "GET",  
+                  url: img_src,  
+                  dataType: "text"
+                }).then(function(data, statusText, jqXHR) {  // Pass the deferral back
+                    field.attr('src', data);
+                    var target = field.data('target');
+                    $(target).val("");
+                    return data;
+                });
+            };
+        }( jQuery ));        
+        
+    </script>
+  </body>
+</html>

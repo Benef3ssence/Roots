@@ -1,0 +1,27 @@
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        {% include 'components/head.html' %}
+          
+        <body>
+            <div id="wrapper">
+                {% include 'components/nav-account.html' %}
+                <div id="page-wrapper">
+                    {% include 'components/alerts.html' %}
+                    
+                    <h1>User Groups</h1>
+                    <ul class="list-group">
+                    {% for group in groups %}
+                        <li class="list-group-item">
+                              <i class="{{group.icon}} fa-fw"></i> {{group.name}}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <br>
+                
+                </div>
+            </div>
+        </body>
+        </html>
+        
+        

@@ -1,0 +1,105 @@
+<div class="sidebar-nav navbar-collapse clearfix" >
+    <ul class="nav" id="side-menu">
+        <li   class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+            </div>
+            <!-- /input-group -->
+        </li>
+        <li>
+            <a href="{{site.uri.public}}/dashboard"><i class="ion-speedometer fa-fw"></i> Dashboard</a>
+        </li>
+    <li>
+            <a href="{{site.uri.public}}/my-district"><i class="fa fa-map-signs  fa-fw"></i> My District</a>
+        </li>
+         <li>
+            <a href="#"><i class="fa ion-social-bitcoin fa-fw"></i>Participatory Budget<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                {% if checkAccess('uri_dashboard') %}
+                <li>
+                    <a href="{{site.uri.public}}/Participatory/idea"><i class="ion-ios-lightbulb-outline  fa-fw"></i> Submit An Idea!</a>
+                </li>
+                    <li>
+                    <a href="{{site.uri.public}}/Participatory/"><i class="ion-spoon  fa-fw"></i> Not a real link yet!</a>
+                </li>
+                    <li>
+                    <a href="{{site.uri.public}}/Participatory/"><i class="ion-ios-rose-outline  fa-fw"></i> One day will link to past projects!</a>
+                </li>
+                {% endif %}
+             
+
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+    
+        <li>
+            <a href="{{site.uri.public}}/budget"><i class="fa fa-money fa-fw"></i> Budgets</a>
+        </li>
+		<li>
+            <a href="{{site.uri.public}}/legislation"><i class="fa fa-university fa-fw"></i> Legislation</a>
+        </li>
+		<li>
+            <a href="{{site.uri.public}}/oversight"><i class="fa fa-binoculars fa-fw"></i> Oversight</a>
+        </li>
+   
+         
+        {% if checkAccess('uri_users') %}
+        <li>
+            <a href="{{site.uri.public}}/users"><i class="fa fa-users fa-fw"></i> {{ translate("MENU_USERS") }}</a>
+        </li>
+        {% endif %}
+        {% if checkAccess('uri_delegation') %}
+        <li>
+            <a href="{{site.uri.public}}/delegation"><i class="fa fa-users fa-fw"></i>PB Delegation</a>
+        </li>
+        {% endif %}
+        {% if checkAccess('uri_group_users', { ('primary_group_id') : 4 }) %}
+    
+        {% endif %}
+          
+        <!--      {% if checkAccess('uri_account-groups') %}   -->
+        <li>
+          <a href="{{site.uri.public}}/account/groups"><i class="fa fa-tags fa-fw"></i>My Groups</a>
+        </li>
+             <!--  {% endif %}  -->
+        
+        {% if checkAccess('uri_site_settings') or checkAccess('uri_manage_groups') %}
+        <li>
+            <a href="#"><i class="fa fa-wrench fa-fw"></i> {{ translate("MENU_CONFIGURATION") }}<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                {% if checkAccess('uri_site_settings') %}
+                <li>
+                    <a href="{{site.uri.public}}/config/settings"><i class="fa fa-globe fa-fw"></i> {{ translate("MENU_SITE_SETTINGS") }}</a>
+                </li>
+                {% endif %}
+                {% if checkAccess('uri_manage_groups') %}
+                <li>
+                    <a href="{{site.uri.public}}/groups"><i class="fa fa-tags fa-fw"></i> {{ translate("MENU_GROUPS") }}</a>
+                </li>
+                {% endif %}
+
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+
+
+
+        {% endif %}
+    </ul>
+</div>
+<!-- /.sidebar-collapse
+
+
+
+
+    <li>
+            <a href="{{site.uri.public}}/users/zerglings"><i class="sc sc-zergling fa-fw"></i> Zerglings</a>
+        </li>
+		
+		
+		-->

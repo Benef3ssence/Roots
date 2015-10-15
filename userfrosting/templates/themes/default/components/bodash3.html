@@ -1,0 +1,67 @@
+<link href="https://cdn.jsdelivr.net/jquery.nouislider/8.0.2/nouislider.min.css" rel="stylesheet" /><style type="text/css">
+.tooltip {
+  display: block;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  font: 400 12px/12px Arial;
+  border-radius: 3px;
+  background: #fff;
+  top: -43px;
+  padding: 5px;
+  left: -9px;
+  text-align: center;
+  width: 50px;
+  z-index:22; opacity:100;
+}
+.tooltip strong {
+  display: block;
+  padding: 2px;z-index:22;
+}</style> 
+
+<div class="clearfix  row-fluid" style="font-size: small;">
+<div class="row">
+  <div class="col-lg-12" style="position:fixed; bottom:0; min-height:100px; max-height:200px; height:20%; right:0;background-color:white; width:100%; z-index:19;"><br/><br/><br/>
+
+<div style="width:50%; margin:auto;">
+<div class="slide-tooltip" id="slider-tooltip"></div></div>
+
+
+</div></div></div>
+ <script src="https://cdn.jsdelivr.net/jquery.nouislider/8.0.2/nouislider.min.js"></script> 
+<script type="text/javascript">var tooltipSlider = document.getElementById('slider-tooltip');
+
+noUiSlider.create(tooltipSlider, {
+  start: 50,
+  range: {
+    'min':  0,
+    '30%': 30,
+    'max': 100
+  }
+});
+
+var tipHandles = tooltipSlider.getElementsByClassName('noUi-handle'),
+  tooltips = [];
+
+// Add divs to the slider handles.
+for ( var i = 0; i < tipHandles.length; i++ ){
+  tooltips[i] = document.createElement('div');
+
+
+  tipHandles[i].appendChild(tooltips[i]);
+
+
+}
+
+// Add a class for styling
+tooltips[0].className += 'tooltip';
+// Add additional markup
+tooltips[0].innerHTML = '<strong>Value: </strong><span></span>';
+// Replace the tooltip reference with the span we just added
+tooltips[0] = tooltips[0].getElementsByTagName('span')[0];
+
+// When the slider changes, write the value to the tooltips.
+tooltipSlider.noUiSlider.on('update', function( values, handle ){
+  tooltips[handle].innerHTML = values[handle];
+ 
+});
+</script >
